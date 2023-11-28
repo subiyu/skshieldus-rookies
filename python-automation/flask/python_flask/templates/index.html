@@ -1,0 +1,16 @@
+<!--! 누르고 엔터치면 인덱스 페이지 기본적인 뼈대를 자동으로 만들어줌 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>RSS 리더 페이지</h1>
+    <form method="POST" action="{{url_for('rss')}}"> <!-- http://127.0.0.1:5000/rss 로 전송 -->
+        <label>RSS URL 주소를 입력하세요.</label><br> <!-- br은 줄 바꿈 -->
+        <input type="text" name="rss_url" size="40">
+        <button type="submit">확인</button>
+    </form>
+</body>
+</html>

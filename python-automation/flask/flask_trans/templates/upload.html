@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>flask & rss 실습</title>
+</head>
+<body>
+    <h1>엑셀 파일 업로드</h1>
+    <form method="post" action="{{url_for('process')}}" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="업로드">
+    </form>
+</body>
+</html>

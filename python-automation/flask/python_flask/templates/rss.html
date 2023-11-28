@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RSS 결과 페이지</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h1>RSS 결과 페이지</h1>
+    <table border="1"> <!-- border 속성으로 tabel에 테두리 생성 -->
+        <thead>
+            <tr> <!-- tr: table row로 한 행을 나타냄 -->
+                <th>제목</th> <!-- th: 각 열의 제목 -->
+                <th>링크</th>
+                <th>요약</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in feed.entries%} <!-- for문 -->
+            <tr>
+                <td>{{entry.title}}</td> <!-- table date로 하나의 셀을 나타냄, 표 안에 들어갈 내용을 기술 -->
+                <td><a href="{{entry.link}}">{{entry.link}}</a></td>
+                <td>{{entry.description}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
